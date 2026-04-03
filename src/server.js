@@ -1,7 +1,10 @@
+// importacao de bibliotecas
 import http from "node:http"
 
-function listener(request, response){
-    // funcao
+import {jsonHandler} from "./middlewares/jsonHandler.js"  
+
+async function listener(request, response){
+    await jsonHandler(request, response)
 }
 
 http.createServer(listener).listen(3333)
