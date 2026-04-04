@@ -6,7 +6,7 @@ const route = routes.find((route) => {
 })
 
 if(route){
-    return route.controller(request, response)
+    return route.controller({request, response})
 }
 
 return response.writeHead(404).end()
